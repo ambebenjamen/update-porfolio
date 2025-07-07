@@ -1,0 +1,439 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 220 8% 95%;
+
+    --card: 220 15% 10%;
+    --card-foreground: 220 8% 95%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 220 8% 95%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 10% 20%;
+    --secondary-foreground: 220 8% 95%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 8% 60%;
+
+    --accent: 264 83% 69%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 264 83% 69%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .glass {
+    @apply bg-card/30 backdrop-blur-lg border border-border/50;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Enhanced 3D Animations */
+  .animate-float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
+  .animate-float-3d-delayed {
+    animation: float-3d 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-float-3d-slow {
+    animation: float-3d 10s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+
+  .animate-rotate-3d {
+    animation: rotate-3d 20s linear infinite;
+  }
+
+  .animate-pulse-3d {
+    animation: pulse-3d 4s ease-in-out infinite;
+  }
+
+  .animate-tilt-3d {
+    animation: tilt-3d 6s ease-in-out infinite;
+  }
+
+  .animate-profile-float {
+    animation: profile-float 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+
+  .animate-typing-3d {
+    animation: typing-3d 3.5s steps(40, end);
+  }
+
+  .animate-fade-in-3d {
+    animation: fade-in-3d 1s ease-out;
+  }
+
+  .animate-fade-up-3d {
+    animation: fade-up-3d 1s ease-out;
+  }
+
+  .animate-slide-in-left-3d {
+    animation: slide-in-left-3d 1s ease-out;
+  }
+
+  .animate-slide-in-right-3d {
+    animation: slide-in-right-3d 1s ease-out;
+  }
+
+  .animate-slide-up-3d {
+    animation: slide-up-3d 1s ease-out;
+  }
+
+  .animate-button-float {
+    animation: button-float 3s ease-in-out infinite;
+  }
+
+  .animate-button-float-delayed {
+    animation: button-float 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .animate-bounce-3d {
+    animation: bounce-3d 2s infinite;
+  }
+
+  .animate-card-float {
+    animation: card-float 4s ease-in-out infinite;
+  }
+
+  .animate-card-float-up {
+    animation: card-float-up 1s ease-out;
+  }
+
+  .animate-card-slide-up {
+    animation: card-slide-up 0.8s ease-out;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 30s linear infinite;
+  }
+
+  .animate-scale-in-3d {
+    animation: scale-in-3d 0.5s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 1s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 1s ease-out;
+  }
+}
+
+/* 3D Keyframes */
+@keyframes float-3d {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  33% { 
+    transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+  }
+  66% { 
+    transform: translateY(-10px) rotateX(-3deg) rotateY(-3deg);
+  }
+}
+
+@keyframes rotate-3d {
+  0% { 
+    transform: rotate(0deg) rotateX(0deg) rotateY(0deg);
+  }
+  100% { 
+    transform: rotate(360deg) rotateX(360deg) rotateY(180deg);
+  }
+}
+
+@keyframes pulse-3d {
+  0%, 100% { 
+    transform: scale(1) rotateZ(0deg);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: scale(1.1) rotateZ(180deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes tilt-3d {
+  0%, 100% { 
+    transform: rotate(45deg) rotateX(0deg) rotateY(0deg);
+  }
+  25% { 
+    transform: rotate(45deg) rotateX(10deg) rotateY(10deg);
+  }
+  75% { 
+    transform: rotate(45deg) rotateX(-10deg) rotateY(-10deg);
+  }
+}
+
+@keyframes profile-float {
+  0%, 100% { 
+    transform: translateY(0px) rotateZ(0deg);
+  }
+  50% { 
+    transform: translateY(-10px) rotateZ(2deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { 
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% { 
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes typing-3d {
+  0% { 
+    width: 0;
+    transform: rotateY(0deg);
+  }
+  100% { 
+    width: 100%;
+    transform: rotateY(5deg);
+  }
+}
+
+@keyframes fade-in-3d {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes fade-up-3d {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateX(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes slide-in-left-3d {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotateY(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes slide-in-right-3d {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) rotateY(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes slide-up-3d {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes button-float {
+  0%, 100% { 
+    transform: translateY(0px) rotateZ(0deg);
+  }
+  50% { 
+    transform: translateY(-5px) rotateZ(1deg);
+  }
+}
+
+@keyframes bounce-3d {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0) rotateX(10deg);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0) rotateX(5deg);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0) rotateX(2deg);
+  }
+}
+
+@keyframes card-float {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% { 
+    transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+  }
+}
+
+@keyframes card-float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotateX(20deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+  }
+}
+
+@keyframes card-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes spin-slow {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% { 
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale-in-3d {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(10deg) rotateY(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
