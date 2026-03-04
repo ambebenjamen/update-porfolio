@@ -9,18 +9,15 @@ const Skills = () => {
     { name: 'React / Next.js', level: 95, color: 'bg-blue-500' },
     { name: 'TypeScript', level: 90, color: 'bg-blue-600' },
     { name: 'Node.js / Express', level: 88, color: 'bg-green-500' },
-    { name: 'Python / Django', level: 35, color: 'bg-yellow-500' },
     { name: 'PostgreSQL / MongoDB', level: 82, color: 'bg-purple-500' },
-    { name: 'AWS / GCP', level: 40, color: 'bg-orange-500' },
-    { name: 'Docker / Kubernetes', level: 25, color: 'bg-cyan-500' },
     { name: 'GraphQL', level: 78, color: 'bg-pink-500' },
   ];
 
   const tools = [
-    'JavaScript (ES6+)', 'React', 'Next.js', 'Vue.js', 'TypeScript',
-    'Node.js', 'Express', 'Python', 'Django', 'FastAPI',
+    'JavaScript (ES6+)', 'React', 'Next.js', 'TypeScript',
+    'Node.js', 'Express', 'Python', 'FastAPI',
     'PostgreSQL', 'MongoDB', 'Redis', 'AWS', 'GCP',
-    'Docker', 'Kubernetes', 'Git', 'GraphQL', 'REST APIs'
+    'Git', 'GraphQL', 'REST APIs'
   ];
 
   useEffect(() => {
