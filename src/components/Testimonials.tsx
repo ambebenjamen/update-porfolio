@@ -9,25 +9,25 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Sarah Tambe",
       role: "Product Manager at TechCorp",
       content: "Alex delivered an exceptional web application that exceeded our expectations. His attention to detail and technical expertise are outstanding.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      image: ""
     },
     {
-      name: "Michael Brown",
+      name: "Michael Lambi",
       role: "CEO at StartupX",
       content: "Working with Alex was a game-changer for our startup. He built our entire platform from scratch and it's been running flawlessly.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      rating: 4,
+      image: ""
     },
     {
-      name: "Emily Davis",
+      name: "Emily Ambe",
       role: "Marketing Director",
       content: "The website Alex created for us increased our conversion rate by 40%. His understanding of both design and development is impressive.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      rating: 4.5,
+      image: ""
     }
   ];
 
